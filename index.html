@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Wedding Countdown</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { color: #4CAF50; }
+        .countdown { font-size: 2em; }
+    </style>
+</head>
+<body>
+    <h1>Countdown to Our Wedding</h1>
+    <div class="countdown">
+        <p>Days until our wedding: <span id="days"></span></p>
+    </div>
+    <script>
+        const weddingDate = new Date('2023-12-31T00:00:00');
+        function updateCountdown() {
+            const now = new Date();
+            const difference = weddingDate - now;
+            const days = Math.ceil(difference / (1000 * 60 * 60 * 24));
+            document.getElementById('days').innerText = days;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
